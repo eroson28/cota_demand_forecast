@@ -1,3 +1,79 @@
+<!DOCTYPE html>
 <html>
-    <p> test </p>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COTA Forecasting Project</title>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <script>
+      function openMenu() {
+      document.getElementById("dropdownMenu").classList.toggle("show");
+      if (document.getElementById("dropdownMenu").classList.contains("show")) {
+        document.getElementById("menuButton").src="vertical-menu.svg";
+      } else {
+        document.getElementById("menuButton").src="horizontal-menu.svg";
+      }
+      }
+    </script>
+  </head>
+  <body>
+  <div id="dropdownContainer">
+    <img src="horizontal-menu.svg" height="30px" width="30px" onclick="openMenu()" id="menuButton">
+    <div id="dropdownMenu" class="dropdownContent">
+      <a href="index.html"> Home </a> <br>
+      <a href="map.html"> Map </a> <br>
+      <a href="https://github.com/eroson28/cota_demand_forecasting/tree/main"> GitHub </a> <br>
+      <a href="https://github.com/eroson28/cota_demand_forecasting/blob/main/data/sources.txt"> Sources </a>
+    </div>
+  </div>
+  
+  <div id="content">
+      <div>
+        <h1 style="display:inline; "> COTA Forecasting Project</h1>
+        <h2 style="display:inline; white-space: pre;">  by Erol Sonmez </h2>
+      </div>
+
+    <h2>What is this?</h2>
+    <p>
+      According to the <a href="https://www.apta.com/wp-content/uploads/2025-Q1-Ridership-APTA.1.pdf">FTA</a>, 
+      the Central Ohio Transit Authority (COTA) bus system had a daily ridership of ~37,300 per weekday in the
+      first quarter of 2025, with a service area of ~1.2 million residents. Columbus is one of the biggest cities
+      in the U.S. without an intercity rail system, forcing residents wanting to use public transit to rely on the bus 
+      system. This makes it critical for COTA to identify bus stops which are underutilized and make predictions as to where
+      demand for public transit may geographically shift in the future within central Ohio.
+    </p>
+    <p>I identified, cleaned, and mapped various geodata files and datasets related to the 
+      Central Ohio Transporation Authority bus system and Columbus demographic data, with the goal
+      of identifying underserved populations, possible locations for line or stop additions, and current usage trends. This
+      included datasets about COTA ridership, poverty status, worker commute method, and MORPC TAZ 
+      geodata. I encourage you to check out the map yourself.</p>
+    <p>
+      You can find all the datasets used in the GitHub, as well as all sources and the
+      code used to generate the map.
+    </p>
+    <h2> How do you use the map? </h2>
+    <p> You can find the map <a href="map.html"> here.</a> You can toggle different layers and basemaps on the top right. 
+    There's also a search bar you can use to find an address on the map. </p>
+    <p> Some notes: The COTA stops are colored based on ridership, with the most used stops being greenest. You can 
+      also see more information about a stop by clicking it. Finally, you may find it easier to see
+      certain layers by switching the basemap in the layer control.
+    </p>
+    <p>
+      The map helps you see possible relationships between these different variables. For instance, the image on the left here
+      is the TAZ 2050 job density forecast layer, and on the right is the percentage of workers who commute via COTA bus.
+      <div class="image">
+      <img src="1.png" style="width: 50%; justify-content: left;">
+      <img src="2.png" style="width: 50%; justify-content: right;">
+      </div>
+    </p>
+    <p> The highlighted area is predicted to have a high-density of jobs by 2050, but does not have readily accessible
+      bus stops, and has no workers living in that area who commute via public transit. This could suggest that COTA should
+      consider adding a stop to an existing line within this region to both allow those who work in that tract to travel there 
+      via bus, and to allow those that live there to access the COTA system to commute to work outside of that tract.
+    </p>
+    <br>
+    <h2> Thank you for checking out my project! </h2>
+    <p style="padding-bottom: 30px"> Please feel free to reach out to me at erolsonmeznj@gmail.com if you have any questions, suggestions, or feedback. </p>
+  </div>
+  </body>
 </html>
